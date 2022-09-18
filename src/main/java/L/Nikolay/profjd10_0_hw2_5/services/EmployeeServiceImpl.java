@@ -33,10 +33,8 @@ public class EmployeeServiceImpl implements EmployeeService {
                     return employeeToDelete;
                 }
             }
-        } else {
-            throw new EmployeeNotFoundException();
         }
-        return null;
+        throw new EmployeeNotFoundException();
     }
 
     public Employee findEmployee(String firstName, String lastName) {
@@ -45,10 +43,8 @@ public class EmployeeServiceImpl implements EmployeeService {
             for (int i = 0; i < employees.size(); i++) {
                 return employees.get(i);
             }
-        } else {
-            throw new EmployeeNotFoundException();
         }
-        return null;
+        throw new EmployeeNotFoundException();
     }
 
     public List printAllEmployees() {
